@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+include_once('assets/config.php');
+function test_input($data) {
+     
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+  
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     
+    $username = test_input($_POST["username"]);
+    $password = test_input($_POST["password"]);
+    $stmt = $conn->prepare("SELECT * FROM users_info");
+    $stmt->execute();
+    $users = $stmt->fetchAll();
+     
+    foreach($users as $user) {
+         
+        if(($user['user_Username'] == $username) &&
+            ($user['user_Pass'] == $password)) {
+                $_SESSION['user_Username'] = $username;
+                $_SESSION['sign_in'] = true;
+                header("location: dashboard");
+        }
+        else {
+            echo "<script language='javascript'>";
+            echo "alert('WRONG INFORMATION')";
+            echo "</script>";
+            die();
+        }
+    }
+}
+?>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -86,15 +121,15 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form role="form" action="" method="post">
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                      <input type="text" name="username" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
                     </div>
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                      <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
                     </div>
                     <div class="text-center">
-                      <button type="button" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
+                      <button type="submit"  class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
                     </div>
                   </form>
                 </div>
