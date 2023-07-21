@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+include_once('assets/config.php');
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     
+    $fullname = test_input($_POST["user_Name"]);
+    $email = test_input($_POST["user_Email"]);
+    $username = test_input($_POST["user_Username"]);
+    $password = test_input($_POST["user_Pass"]);
+    $phoneNumber = test_input($_POST["user_PhoneNumber"]);
+
+    $sql = "insert into users_info(user_Name,user_Email,user_Username,user_Pass,user_PhoneNumber)
+    values('$fullname','$email','$username','$password','$phoneNumber')"; 
+
+    if ($conn->query($sql) == TRUE) {
+      $_SESSION['user_Username'] = $username;
+      $_SESSION['sign_in'] = true;
+      header("location: dashboard");
+    }else{
+      Log::alert("Wrong");
+    }
+
+    //if (!$conn -> query("INSERT INTO users_info (user_Username,user_Pass,user_Name,user_Email,user_PhoneNumber) values('$fullname','$email','$username','$password','$phoneNumber')")) {
+    //  echo("Error description: " . $conn -> error);
+    //}
+  }
+?>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -136,15 +169,21 @@
               </div>
             </div>
             <div class="card-body">
-              <form role="form">
+              <form role="form" method="POST" action="">
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                  <input type="text" name="user_Name" class="form-control" placeholder="Name" aria-label="Name">
                 </div>
                 <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                  <input type="text" name="user_Username" class="form-control" placeholder="Username" aria-label="Name">
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                  <input type="email" name="user_Email" class="form-control" placeholder="Email" aria-label="Email">
+                </div>
+                <div class="mb-3">
+                  <input type="number" name = "user_PhoneNumber" class="form-control" placeholder="Phone Number" aria-label="Email">
+                </div>
+                <div class="mb-3">
+                  <input type="password" name="user_Pass" class="form-control" placeholder="Password" aria-label="Password">
                 </div>
                 <div class="form-check form-check-info text-start">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -153,9 +192,9 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                 </div>
-                <p class="text-sm mt-3 mb-0">Already have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign in</a></p>
+                <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in" class="text-dark font-weight-bolder">Sign in</a></p>
               </form>
             </div>
           </div>

@@ -21,18 +21,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      
     foreach($users as $user) {
          
-        if(($user['user_Username'] == $username) &&
-            ($user['user_Pass'] == $password)) {
+        if(($user['user_Username'] == $username) && ($user['user_Pass'] == $password)) {
                 $_SESSION['user_Username'] = $username;
                 $_SESSION['sign_in'] = true;
                 header("location: dashboard");
-        }
-        else {
+        }else if(($user['user_Email'] == $username) && ($user['user_Pass'] == $password)) {
+            $_SESSION['user_Username'] = $username;
+            $_SESSION['sign_in'] = true;
+            header("location: dashboard");
+        }else {
             echo "<script language='javascript'>";
             echo "alert('WRONG INFORMATION')";
             echo "</script>";
             die();
-        }
+      
+          }
     }
 }
 ?>
@@ -136,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     Don't have an account?
-                    <a href="javascript:;" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    <a href="sign-up" class="text-primary text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </div>
               </div>
