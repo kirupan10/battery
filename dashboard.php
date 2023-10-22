@@ -8,11 +8,9 @@ if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <title>
-    BATTERY SWAPPING STATION
-  </title>
+  <link rel="icon" sizes="76x76" href="assets/img/logos/title.png">
+  <link rel="icon" type="image/png" href="assets/img/logos/title.png">
+  <title>Battery Swapping Station</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
