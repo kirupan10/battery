@@ -15,24 +15,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
-    $stmt = $conn->prepare("SELECT * FROM users_info");
+    $stmt = $conn->prepare("SELECT * FROM users");
     $stmt->execute();
     $users = $stmt->fetchAll();
      
     foreach($users as $user) {
          
-        if(($user['user_Username'] == $username) && ($user['user_Pass'] == $password)) {
-                $_SESSION['user_Username'] = $username;
+        if(($user['username'] == $username) && ($user['password'] == $password)) {
+                $_SESSION['username'] = $username;
                 $_SESSION['sign_in'] = true;
                 header("location: dashboard");
-        }else if(($user['user_Email'] == $username) && ($user['user_Pass'] == $password)) {
-            $_SESSION['user_Username'] = $username;
+        }else if(($user['email'] == $username) && ($user['password'] == $password)) {
+            $_SESSION['username'] = $username;
             $_SESSION['sign_in'] = true;
             header("location: dashboard");
         }else {
             echo "<script language='javascript'>";
             echo "alert('WRONG INFORMATION')";
             echo "</script>";
+            header("location: sign-in");
             die();
       
           }
