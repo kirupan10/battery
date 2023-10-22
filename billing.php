@@ -180,7 +180,7 @@ outline: none;
             <div class="card-header pb-0 p-3">
               <div class="row">
                 <div class="col-6 d-flex align-items-center">
-                  <h6 class="mb-0">Invoices</h6>
+                  <h6 class="mb-0">Battery Management System (BMS)</h6>
                 </div>
                 <div class="col-6 text-end">
                   <button class="btn btn-outline-primary btn-sm mb-0">View All</button>
@@ -191,52 +191,72 @@ outline: none;
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark font-weight-bold text-sm">March, 01, 2020</h6>
-                    <span class="text-xs">#MS-415646</span>
+                    <h6 class="mb-1 text-dark font-weight-bold text-sm">Battery Health</h6>
+                    <span class="text-xs">Since yesterday</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                    $180
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                  <?php echo $battery_heath?>%
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
                   </div>
                 </li>
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">February, 10, 2021</h6>
-                    <span class="text-xs">#RV-126749</span>
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Battery Percentage</h6>
+                    <span class="text-xs">Last charged 11.54PM</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                    $250
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                    <?php echo $battery_percentage?>%
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
                   </div>
                 </li>
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">April, 05, 2020</h6>
-                    <span class="text-xs">#FB-212562</span>
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Temperature</h6>
+                    <span class="text-xs">Current temparute</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                    $560
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                  <?php echo$temperature = rand(33,95);?> C
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i> </button>
                   </div>
                 </li>
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">June, 25, 2019</h6>
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
                     <span class="text-xs">#QW-103578</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                    $120
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                    Null
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
                   </div>
                 </li>
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">March, 01, 2019</h6>
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
                     <span class="text-xs">#AR-803481</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                    $300
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                    Null
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                  <div class="d-flex flex-column">
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
+                    <span class="text-xs">#AR-803481</span>
+                  </div>
+                  <div class="d-flex align-items-center text-sm">
+                    Null
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                  <div class="d-flex flex-column">
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
+                    <span class="text-xs">#AR-803481</span>
+                  </div>
+                  <div class="d-flex align-items-center text-sm">
+                    Null
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
                   </div>
                 </li>
               </ul>
@@ -312,7 +332,7 @@ outline: none;
                   <div class="d-flex align-items-center">
                     <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-down"></i></button>
                     <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Netflix</h6>
+                      <h6 class="mb-1 text-dark text-sm">Matara</h6>
                       <span class="text-xs">27 March 2020, at 12:30 PM</span>
                     </div>
                   </div>
@@ -324,7 +344,7 @@ outline: none;
                   <div class="d-flex align-items-center">
                     <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
                     <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Apple</h6>
+                      <h6 class="mb-1 text-dark text-sm">Colombo</h6>
                       <span class="text-xs">27 March 2020, at 04:30 AM</span>
                     </div>
                   </div>
@@ -339,7 +359,7 @@ outline: none;
                   <div class="d-flex align-items-center">
                     <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
                     <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Stripe</h6>
+                      <h6 class="mb-1 text-dark text-sm">Galle</h6>
                       <span class="text-xs">26 March 2020, at 13:45 PM</span>
                     </div>
                   </div>
@@ -351,7 +371,7 @@ outline: none;
                   <div class="d-flex align-items-center">
                     <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
                     <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">HubSpot</h6>
+                      <h6 class="mb-1 text-dark text-sm">Matara</h6>
                       <span class="text-xs">26 March 2020, at 12:30 PM</span>
                     </div>
                   </div>
@@ -363,7 +383,7 @@ outline: none;
                   <div class="d-flex align-items-center">
                     <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
                     <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Creative Tim</h6>
+                      <h6 class="mb-1 text-dark text-sm">Kambrupideya</h6>
                       <span class="text-xs">26 March 2020, at 08:30 AM</span>
                     </div>
                   </div>
@@ -375,7 +395,7 @@ outline: none;
                   <div class="d-flex align-items-center">
                     <button class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-exclamation"></i></button>
                     <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Webflow</h6>
+                      <h6 class="mb-1 text-dark text-sm">Akkurassa</h6>
                       <span class="text-xs">26 March 2020, at 05:00 AM</span>
                     </div>
                   </div>

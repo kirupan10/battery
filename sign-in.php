@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }else if(($user['email'] == $username) && ($user['password'] == $password)) {
             $_SESSION['username'] = $username;
             $_SESSION['sign_in'] = true;
+            $_SESSION['timestamp'] = time(); 
             header("location: dashboard");
         }else {
             echo "<script language='javascript'>";
