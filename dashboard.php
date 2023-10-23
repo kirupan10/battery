@@ -65,7 +65,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
               </a>
             </li>
             <li class="nav-item d-flex align-items-center">
-              <a href="logout" class="nav-link text-white font-weight-bold px-0">
+              <a href="logout.php" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Logout</span>
               </a>
@@ -86,7 +86,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 01</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 01</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -98,7 +98,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -114,7 +114,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 02</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 02</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -126,7 +126,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -143,7 +143,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 03</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 03</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -155,7 +155,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -172,7 +172,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 04</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 04</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -184,7 +184,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -204,7 +204,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 05</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 05</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -216,7 +216,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -233,7 +233,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 06</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 06</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -245,7 +245,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -262,7 +262,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 07</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 07</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -274,7 +274,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -291,7 +291,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <div class="numbers">
                     <?php $battery_h = rand(70,100);
                     $battery_p = rand(20,100);?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 08</a></p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">Battery 08</a></p>
                     <h5 class="font-weight-bolder">
                       <?php echo $battery_p."%"?>
                     </h5>
@@ -303,7 +303,7 @@ if(time() - $_SESSION['timestamp'] > 300) {
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <a href="billing?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
+                  <a href="billing.php?h=<?php echo $battery_h?>&&p= <?php echo $battery_p?>">
                     <i class="fas fa-battery-full"></i>
                   </a>
                   </div>
@@ -397,13 +397,13 @@ if(time() - $_SESSION['timestamp'] > 300) {
                   <a href="" class="nav-link text-muted" target="_self">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a href="profile" class="nav-link text-muted" target="_self">Profile</a>
+                  <a href="profile.php" class="nav-link text-muted" target="_self">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a href="records" class="nav-link text-muted" target="_self">Records</a>
+                  <a href="records.php" class="nav-link text-muted" target="_self">Records</a>
                 </li>
                 <li class="nav-item">
-                  <a href="logout" class="nav-link pe-0 text-muted" target="_self">Logout</a>
+                  <a href="logout.php" class="nav-link pe-0 text-muted" target="_self">Logout</a>
                 </li>
               </ul>
             </div>

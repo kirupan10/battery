@@ -46,7 +46,7 @@ outline: none;
         </nav>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="logout" class="nav-link text-white font-weight-bold px-0">
+              <a href="logout.php" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Logout</span>
               </a>
@@ -165,7 +165,7 @@ outline: none;
                       <h6 class="mb-0">Process to continue</h6>
                     </div>
                     <div class="col-6 text-end">
-                      <a class="btn bg-gradient-dark mb-0" href="receipt">&nbsp;&nbsp;Continue <i class="fas fa-arrow-right"></i></a>
+                      <a class="btn bg-gradient-dark mb-0" href="receipt.php">&nbsp;&nbsp;Continue <i class="fas fa-arrow-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -424,16 +424,16 @@ outline: none;
             <div class="col-lg-6">
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
-                  <a href="dashboard" class="nav-link text-muted" target="_self">Dashboard</a>
+                  <a href="dashboard.php" class="nav-link text-muted" target="_self">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a href="profile" class="nav-link text-muted" target="_self">Profile</a>
+                  <a href="profile.php" class="nav-link text-muted" target="_self">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a href="records" class="nav-link text-muted" target="_self">Records</a>
+                  <a href="records.php" class="nav-link text-muted" target="_self">Records</a>
                 </li>
                 <li class="nav-item">
-                  <a href="logout" class="nav-link pe-0 text-muted" target="_self">Logout</a>
+                  <a href="logout.php" class="nav-link pe-0 text-muted" target="_self">Logout</a>
                 </li>
               </ul>
             </div>

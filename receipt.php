@@ -178,8 +178,8 @@ if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
             </div>
             <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
               <div class="d-flex justify-content-between" >
-                <a href="led" class="btn btn-sm btn-dark float-center mb-0 d-none d-lg-block">Open/Close Battery Tray</a>
-                <a href="led" class="btn btn-sm btn-dark float-center mb-0 d-block d-lg-none"><i class="ni ni-email-83"></i></a>
+                <a href="led.php" class="btn btn-sm btn-dark float-center mb-0 d-none d-lg-block">Open/Close Battery Tray</a>
+                <a href="led.php" class="btn btn-sm btn-dark float-center mb-0 d-block d-lg-none"><i class="ni ni-email-83"></i></a>
               </div>
             </div>
           </div>
@@ -201,16 +201,16 @@ if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
             <div class="col-lg-6">
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
-                  <a href="dashboard" class="nav-link text-muted" target="_self">Dashboard</a>
+                  <a href="dashboard.php" class="nav-link text-muted" target="_self">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a href="profile" class="nav-link text-muted" target="_self">Profile</a>
+                  <a href="profile.php" class="nav-link text-muted" target="_self">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a href="records" class="nav-link text-muted" target="_self">Records</a>
+                  <a href="records.php" class="nav-link text-muted" target="_self">Records</a>
                 </li>
                 <li class="nav-item">
-                  <a href="logout" class="nav-link pe-0 text-muted" target="_self">Logout</a>
+                  <a href="logout.php" class="nav-link pe-0 text-muted" target="_self">Logout</a>
                 </li>
               </ul>
             </div>

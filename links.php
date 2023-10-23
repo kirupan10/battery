@@ -1,0 +1,1 @@
+https://www.raspberry-pi-geek.com/Archive/2014/07/PHP-on-Raspberry-Pi#:~:text=Probably%20the%20easiest%20way%20to,tasks%20and%20control%20GPIO%20pins.
