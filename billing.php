@@ -165,7 +165,7 @@ outline: none;
                       <h6 class="mb-0">Process to continue</h6>
                     </div>
                     <div class="col-6 text-end">
-                      <a class="btn bg-gradient-dark mb-0" href="profile">&nbsp;&nbsp;Continue <i class="fas fa-arrow-right"></i></a>
+                      <a class="btn bg-gradient-dark mb-0" href="receipt">&nbsp;&nbsp;Continue <i class="fas fa-arrow-right"></i></a>
                     </div>
                   </div>
                 </div>
