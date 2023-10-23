@@ -24,17 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(($user['username'] == $username) && ($user['password'] == $password)) {
                 $_SESSION['username'] = $username;
                 $_SESSION['sign_in'] = true;
-                header("location: dashboard");
+                header("location: dashboard.php");
         }else if(($user['email'] == $username) && ($user['password'] == $password)) {
             $_SESSION['username'] = $username;
             $_SESSION['sign_in'] = true;
             $_SESSION['timestamp'] = time(); 
-            header("location: dashboard");
+            header("location: dashboard.php");
         }else {
             echo "<script language='javascript'>";
             echo "alert('WRONG INFORMATION')";
             echo "</script>";
-            header("location: sign-in");
+            header("location: sign-in.php");
             die();
       
           }
