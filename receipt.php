@@ -29,7 +29,7 @@ if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
         <div class="row gx-4">
           <div class="col-auto">
             <div class="avatar avatar-xl position-relative">
-              <img src="../assets/img/team-1.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+              <img src="assets/img/user.png" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
             </div>
           </div>
           <div class="col-auto my-auto">
@@ -107,13 +107,13 @@ if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Name</label>
-                    <input class="form-control" type="text" value="Kirupan Inpathas">
+                    <input class="form-control" type="text" value="Chris P. Bacon.">
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Phone Number</label>
-                    <input class="form-control" type="text" value="077-022-1046">
+                    <input class="form-control" type="text" value="077-123-4567">
                   </div>
                 </div>
                 <div class="col-md-12">
@@ -142,12 +142,12 @@ if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
                 </div>
               </div>
               <hr class="horizontal dark">
-              <p class="text-uppercase text-sm">About me</p>
+              <p class="text-uppercase text-sm">Payment status</p>
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">About me</label>
-                    <input class="form-control" type="text" value="update bio, later.">
+                    <label for="example-text-input" class="form-control-label">Payment status</label>
+                    <input class="form-control" type="text" value="Payment has been successfully completed.">
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@ if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
                   <i class="ni location_pin mr-2"></i>Health %, Percentage %
                 </div>
                 <div class="h6 mt-4">
-                  <i class="ni business_briefcase-24 mr-2"></i>Payment has been seccuessfully.
+                  <i class="ni business_briefcase-24 mr-2"></i>Payment has been successfully completed.
                 </div>
                 <div>
                   <i class="ni education_hat mr-2"></i>Collect your battery and close the Tray
