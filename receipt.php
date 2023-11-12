@@ -179,10 +179,12 @@ if ($_SESSION["sign_in"] != true) {
               </div>
             </div>
           </div>
+          <div class="d-lg-flex justify-content-lg-center" id="loading_img">
+          </div>
           <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
-            <div class="d-flex justify-content-between">
-              <a href="led.php" class="btn btn-sm btn-dark float-center mb-0 d-none d-lg-block">Open/Close Battery Tray</a>
-              <!-- <a href="led.php" class="btn btn-sm btn-dark float-center mb-0 d-block d-lg-none"><i class="ni ni-email-83"></i></a> -->
+            <div class="d-flex justify-content-between justify-content-xl-center">
+              <a class="btn btn-dark btn-sm d-none d-lg-block float-center mb-0" role="button" id="btnopenclose">Loaidng..</a>
+              <a class="btn btn-dark btn-sm d-block d-lg-none float-center mb-0" role="button" href="led.php"><i class="ni ni-email-83"></i></a>
             </div>
           </div>
         </div>
@@ -240,6 +242,8 @@ if ($_SESSION["sign_in"] != true) {
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/dashboard.min.js?v=2.0.4"></script>
+  <script type="module" src="js/batterytray.js"></script>
+
 </body>
 
 </html>

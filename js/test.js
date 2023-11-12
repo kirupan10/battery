@@ -9,12 +9,6 @@ import { app } from "./firebase.js";
 
 const db = getDatabase(app);
 
-// set(ref(db, "users/" + "userId"), {
-//   username: "name",
-//   email: "dineth",
-//   profile_picture: "imageUrl",
-// });
-
 const node1 = ref(db, "fromnode/node1");
 onValue(node1, (snapshot) => {
   const data = snapshot.val();

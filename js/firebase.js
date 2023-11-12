@@ -13,3 +13,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+
+// {
+//   "node1": {
+//     "charge": 5,
+//     "gate": 1,
+//     "soc": 4,
+//     "soh": 84,
+//     "status": 0,
+//     "temp": 30
+//   }
+// }
