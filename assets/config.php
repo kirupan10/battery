@@ -6,7 +6,7 @@ try {
     $servername = "localhost";
     $dbname = "swap_battery";
     $username = "root";
-    $password = "";
+    $password = "root";
   
     $conn = new PDO(
         "mysql:host=$servername; dbname=swap_battery",
@@ -19,5 +19,3 @@ try {
 catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
- 
-?>

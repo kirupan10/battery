@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-$battery_heath = $_GET['h'];
-$battery_percentage = $_GET['p'];
+<?php
+$batteryno = $_GET['bn'];
 ?>
+<script>
+  var batteryno = <?php echo $batteryno ?>;
+</script>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,12 +26,12 @@ $battery_percentage = $_GET['p'];
   <link id="pagestyle" href="./assets/css/dashboard.css?v=2.0.4" rel="stylesheet" />
   <style>
     input {
-border: none;
-background-color: transparent;
-resize: none;
-outline: none;
-}
-</style>
+      border: none;
+      background-color: transparent;
+      resize: none;
+      outline: none;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -44,15 +47,15 @@ outline: none;
           </ol>
           <h6 class="font-weight-bolder text-white mb-0">Billing</h6>
         </nav>
-          <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center">
-              <a href="logout.php" class="nav-link text-white font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Logout</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul class="navbar-nav  justify-content-end">
+          <li class="nav-item d-flex align-items-center">
+            <a href="logout.php" class="nav-link text-white font-weight-bold px-0">
+              <i class="fa fa-user me-sm-1"></i>
+              <span class="d-sm-inline d-none">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
       </div>
     </nav>
     <!-- End Navbar -->
@@ -98,7 +101,7 @@ outline: none;
                       <h6 class="text-center mb-0">Charging %</h6>
                       <span class="text-xs">Battery Percentage</span>
                       <hr class="horizontal dark my-3">
-                      <h5 class="mb-0"><?php echo $battery_percentage?>%</h5>
+                      <h5 class="mb-0" id="battry_charging">Loading..</h5>
                     </div>
                   </div>
                 </div>
@@ -113,7 +116,9 @@ outline: none;
                       <h6 class="text-center mb-0">Health %</h6>
                       <span class="text-xs">Battery Health</span>
                       <hr class="horizontal dark my-3">
-                      <h5 class="mb-0"><?php echo $battery_heath?>%</h5>
+                      <!-- <h5 class="mb-0">%</h5> -->
+                      <h5 class="mb-0" id="battry_health">Loading..</h5>
+
                     </div>
                   </div>
                 </div>
@@ -138,7 +143,7 @@ outline: none;
                     </div>
                     <div class="col-md-6">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                      <h6 class="mb-0"><input type="text" class="mb-0" placeholder="****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852"></h6>
+                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852"></h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
                     </div>
@@ -153,7 +158,7 @@ outline: none;
                     </div>
                     <div class="col-md-6">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                      <h6 class="mb-0"><input type="text" class="mb-0" placeholder="Month/Year &nbsp;&nbsp;&nbsp;07/27"></h6>
+                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="Month/Year &nbsp;&nbsp;&nbsp;07/27"></h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
                     </div>
@@ -171,7 +176,7 @@ outline: none;
                 </div>
                 <br>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -195,7 +200,7 @@ outline: none;
                     <span class="text-xs">Since yesterday</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                  <?php echo $battery_heath?>%
+                    00%
                     <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
                   </div>
                 </li>
@@ -205,60 +210,57 @@ outline: none;
                     <span class="text-xs">Last charged 11.54PM</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                    <?php echo $battery_percentage?>%
+                    <div id="battry_charging1">Loading..
+                    </div>
+
                     <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
                   </div>
                 </li>
+
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex flex-column">
                     <h6 class="text-dark mb-1 font-weight-bold text-sm">Temperature</h6>
                     <span class="text-xs">Current temparute</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                  <?php echo$temperature = rand(33,95);?> C
+                    <div id="battry_temp">Loading..</div>
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i> </button>
+                  </div>
+                </li>
+
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                  <div class="d-flex flex-column">
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">SOC</h6>
+                    <span class="text-xs">SOC</span>
+                  </div>
+                  <div class="d-flex align-items-center text-sm">
+                    <div id="soc">Loading..</div>
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i> </button>
+                  </div>
+                </li>
+
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                  <div class="d-flex flex-column">
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">SOH</h6>
+                    <span class="text-xs">SOH</span>
+                  </div>
+                  <div class="d-flex align-items-center text-sm">
+                    <div id="soh">Loading..</div>
                     <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i> </button>
                   </div>
                 </li>
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
-                    <span class="text-xs">#QW-103578</span>
+                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Status</h6>
+                    <span class="text-xs">Status</span>
                   </div>
                   <div class="d-flex align-items-center text-sm">
-                    Null
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
+                    <div id="status">Loading..</div>
+                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i> </button>
                   </div>
                 </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
-                    <span class="text-xs">#AR-803481</span>
-                  </div>
-                  <div class="d-flex align-items-center text-sm">
-                    Null
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
-                    <span class="text-xs">#AR-803481</span>
-                  </div>
-                  <div class="d-flex align-items-center text-sm">
-                    Null
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex flex-column">
-                    <h6 class="text-dark mb-1 font-weight-bold text-sm">Other</h6>
-                    <span class="text-xs">#AR-803481</span>
-                  </div>
-                  <div class="d-flex align-items-center text-sm">
-                    Null
-                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-battery-full"></i></button>
-                  </div>
-                </li>
+
+
               </ul>
             </div>
           </div>
@@ -460,6 +462,10 @@ outline: none;
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+
+
+  <script type="module" src="js/readdata.js"></script>
+
 </body>
 
 </html>

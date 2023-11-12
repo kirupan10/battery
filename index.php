@@ -1,9 +1,8 @@
-<?php 
+<?php
 session_start();
-if($_SESSION["sign_in"] != true){
+if ($_SESSION["sign_in"] != true) {
     header("Location: sign-in.php");
-    xit;
-}else{
+    // xit;
+} else {
     header("Location: dashboard.php");
 }
-?>
