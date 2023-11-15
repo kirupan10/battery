@@ -1,7 +1,7 @@
-int sw = 15;
-int IR = 12;
-int Gate = 5;
-int alert_led = 4;
+int sw = 14;// door sensor //D5
+int IR = 12;//slot ir  //D6
+int Gate = 5;// ind led //D1
+int alert_led = 4;  //D2
 
 void setup() {
   pinMode(sw, INPUT);
@@ -14,7 +14,7 @@ void setup() {
 
 int gt = 0;
 
-int irs=0;
+int irs = 0;
 void loop() {
   //digitalWrite(led, digitalRead(sw));
 
@@ -24,20 +24,22 @@ void loop() {
     digitalWrite(Gate, 0);
   }
 
-  if (digitalRead(IR) && irs==0) {
+  if (digitalRead(IR) && irs == 0) {
     Serial.println("IR_detect");
-    irs=1;
-  } else if(!digitalRead(IR) && irs==1) {
+    irs = 1;
+  } else if (!digitalRead(IR) && irs == 1) {
     Serial.println("IR_detect_not");
-    irs=0;
+    irs = 0;
   }
 
 
-  if (digitalRead(IR) && digitalRead(sw)) {
-    digitalWrite(alert_led, 1);
-  } else {
-    digitalWrite(alert_led, 0);
-  }
+  // if (digitalRead(IR) && digitalRead(sw)) {
+  //   digitalWrite(alert_led, 1);
+  // } else {
+  //   digitalWrite(alert_led, 0);
+  // }
+
+  digitalWrite(alert_led, (digitalRead(IR) && digitalRead(sw)));
 }
 
 
