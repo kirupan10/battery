@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
-session_start();
+$_SESSION['last_activity'] = time();
+include_once('assets/inactive.php');
 include_once('assets/config.php');
 function test_input($data)
 {
@@ -36,7 +35,12 @@ function test_input($data)
 //   }
 // 
 ?>
+<<<<<<< HEAD
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+>>>>>>> 64cacfd0bb559937ad0dbaeec897aec168f9b579
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

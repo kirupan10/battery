@@ -1,6 +1,8 @@
 <?php 
 session_start();
-if($_SESSION["sign_in"] != true){header("Location: sign-in");exit;}
+$_SESSION['last_activity'] = time();
+include_once('assets/inactive.php');
+if($_SESSION["sign_in"] != true){header("Location: sign-in.php");exit;}
 ?>
 <!DOCTYPE html>
 <html lang="en">
