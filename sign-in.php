@@ -1,7 +1,7 @@
 <?php
 $_SESSION['last_activity'] = time();
 require_once 'assets/firebase/init.php'; // Initialize Firebase
-include_once('assets/inactive.php');
+require_once ('assets/inactive.php');
 
 
 function test_input($data) {
