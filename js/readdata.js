@@ -10,6 +10,7 @@ import { app } from "./firebase.js";
 const db = getDatabase(app);
 
 const getData = ref(db, "fromnode/node" + batteryno);
+
 onValue(getData, (snapshot) => {
   const data = snapshot.val();
 

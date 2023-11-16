@@ -3,37 +3,40 @@
 <?php
 session_start();
 include_once('assets/config.php');
-function test_input($data) {
+function test_input($data)
+{
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     
-    $fullname = test_input($_POST["user_Name"]);
-    $email = test_input($_POST["user_Email"]);
-    $username = test_input($_POST["user_Username"]);
-    $password = test_input($_POST["user_Pass"]);
-    $phoneNumber = test_input($_POST["user_PhoneNumber"]);
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $sql = "insert into users_info(user_Name,user_Email,user_Username,user_Pass,user_PhoneNumber)
-    values('$fullname','$email','$username','$password','$phoneNumber')"; 
+//     $fullname = test_input($_POST["user_Name"]);
+//     $email = test_input($_POST["user_Email"]);
+//     $username = test_input($_POST["user_Username"]);
+//     $password = test_input($_POST["user_Pass"]);
+//     $phoneNumber = test_input($_POST["user_PhoneNumber"]);
 
-    if ($conn->query($sql) == TRUE) {
-      $_SESSION['user_Username'] = $username;
-      $_SESSION['sign_in'] = true;
-      header("location: dashboard");
-    }else{
-      Log::alert("Wrong");
-    }
+//     $sql = "insert into users_info(user_Name,user_Email,user_Username,user_Pass,user_PhoneNumber)
+//     values('$fullname','$email','$username','$password','$phoneNumber')"; 
 
-    //if (!$conn -> query("INSERT INTO users_info (user_Username,user_Pass,user_Name,user_Email,user_PhoneNumber) values('$fullname','$email','$username','$password','$phoneNumber')")) {
-    //  echo("Error description: " . $conn -> error);
-    //}
-  }
+//     if ($conn->query($sql) == TRUE) {
+//       $_SESSION['user_Username'] = $username;
+//       $_SESSION['sign_in'] = true;
+//       header("location: dashboard");
+//     }else{
+//       Log::alert("Wrong");
+//     }
+
+//     //if (!$conn -> query("INSERT INTO users_info (user_Username,user_Pass,user_Name,user_Email,user_PhoneNumber) values('$fullname','$email','$username','$password','$phoneNumber')")) {
+//     //  echo("Error description: " . $conn -> error);
+//     //}
+//   }
+// 
 ?>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
     <div class="container">
       <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="../pages/dashboard.html">
-      BATTERY SWAPPING STATION
+        BATTERY SWAPPING STATION
       </a>
       <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon mt-2">
@@ -71,26 +74,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
             <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
-              
-              
+
+
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-2" href="../pages/profile.html">
-              
-          
+
+
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-2" href="../pages/sign-up.html">
-              
-              
+
+
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-2" href="../pages/sign-in.html">
-          
-              
+
+
             </a>
           </li>
         </ul>
@@ -167,7 +170,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </div>
             </div>
             <div class="card-body">
-              <form role="form" method="POST" action="">
+              <form method="POST" id="signupform">
                 <div class="mb-3">
                   <input type="text" name="user_Name" class="form-control" placeholder="Name" aria-label="Name">
                 </div>
@@ -178,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <input type="email" name="user_Email" class="form-control" placeholder="Email" aria-label="Email">
                 </div>
                 <div class="mb-3">
-                  <input type="number" name = "user_PhoneNumber" class="form-control" placeholder="Phone Number" aria-label="Email">
+                  <input type="number" name="user_PhoneNumber" class="form-control" placeholder="Phone Number" aria-label="Email">
                 </div>
                 <div class="mb-3">
                   <input type="password" name="user_Pass" class="form-control" placeholder="Password" aria-label="Password">
@@ -190,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                  <button type="button" id="signupbtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                 </div>
                 <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in" class="text-dark font-weight-bolder">Sign in</a></p>
               </form>
@@ -252,6 +255,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/dashboard.min.js?v=2.0.4"></script>
+  <script src="js/session_handler.js"></script>
+  <script type="module" src="js/login.js"></script>
+
 </body>
 
 </html>
