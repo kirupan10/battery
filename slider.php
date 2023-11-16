@@ -1,14 +1,3 @@
-<?php
-$_SESSION['last_activity'] = time();
-include_once('assets/inactive.php');
-if ($_SESSION["sign_in"] != true) {
-    header("Location: sign-in.php");
-    // xit;
-} else {
-    header("Location: dashboard.php");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
-session_start();
+$_SESSION['last_activity'] = time();
+include_once('assets/inactive.php');
 include_once('assets/config.php');
 function test_input($data) {
      
@@ -41,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
