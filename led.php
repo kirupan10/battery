@@ -1,32 +1,14 @@
-<html>
+<?php
+echo json_encode(['status' => 'success', 'message' => 'LED is on']);
 
-<head>
-        <meta name="viewport" content="width=device-width" />
-        <title>LED Control</title>
-</head>
+// $setmode17 = shell_exec("/usr/local/bin/gpio -g mode 17 out");
 
-<body>
-        <script type="module" src="js/batterytray.js"></script>
-
-        LED Control:
-        <form method="get" action="">
-                <input type="submit" value="ON" name="on">
-                <input type="submit" value="OFF" name="off">
-        </form>
-        <?php
-        $setmode17 = shell_exec("/usr/local/bin/gpio -g mode 17 out");
-        if (isset($_GET['on'])) {
-
-                // echo "<script type='module >openclose();</script>";
-
-                $gpio_on = shell_exec("/usr/local/bin/gpio -g write 17 1");
-                echo "LED is on";
-        } else if (isset($_GET['off'])) {
-                $gpio_off = shell_exec("/usr/local/bin/gpio -g write 17 0");
-                echo "LED is off";
-        }
-        ?>
-
-</body>
-
-</html>
+// if (isset($_GET['on'])) {
+//         $gpio_on = shell_exec("/usr/local/bin/gpio -g write 17 1");
+//         echo json_encode(['status' => 'success', 'message' => 'LED is on']);
+// } else if (isset($_GET['off'])) {
+//         $gpio_off = shell_exec("/usr/local/bin/gpio -g write 17 0");
+//         echo json_encode(['status' => 'success', 'message' => 'LED is off']);
+// } else {
+//         echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
+// }
