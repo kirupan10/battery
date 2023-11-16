@@ -1,14 +1,7 @@
 <?php
 $_SESSION['last_activity'] = time();
 include_once('assets/inactive.php');
-if ($_SESSION["sign_in"] != true) {
-    header("Location: sign-in.php");
-    // xit;
-} else {
-    header("Location: dashboard.php");
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,9 +29,9 @@ if ($_SESSION["sign_in"] != true) {
 <body>
 
 <div class="slider-container">
-    <div class="slide"><img src="image1.jpg" alt="Slide 1"></div>
-    <div class="slide"><img src="image2.jpg" alt="Slide 2"></div>
-    <div class="slide"><img src="image3.jpg" alt="Slide 3"></div>
+    <div class="slide"><img src="assets/img/slider/image1.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="assets/img/slider/image2.jpg" alt="Slide 2"></div>
+    <div class="slide"><img src="assets/img/slider/image3.jpg" alt="Slide 3"></div>
     <!-- Add more slides as needed -->
 </div>
 
@@ -62,7 +55,8 @@ if ($_SESSION["sign_in"] != true) {
 
         // Use jQuery to handle click events on the slider
         $('.slide').on('click', function() {
-            window.location.href = 'index.php';
+            
+            window.location.href = 'sign-in.php';
         });
 
         // Start the automatic sliding

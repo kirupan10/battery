@@ -3,7 +3,7 @@ session_start();
 $_SESSION['last_activity'] = time();
 include_once('assets/inactive.php');
 if ($_SESSION["sign_in"] != true) {
-  header("Location: sign-in");
+  header("Location: sign-in.php");
   exit;
 }
 ?>

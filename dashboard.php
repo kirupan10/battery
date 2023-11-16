@@ -5,17 +5,6 @@ include_once('assets/inactive.php');
 if ($_SESSION["sign_in"] != true) {
   header("Location: sign-in.php");
 }
-/*
-if(time() - $_SESSION['timestamp'] > 300) { 
-    echo"<script>alert('5 Minutes over!');</script>";
-    session_destroy();
-    $_SESSION['sign_in'] = false;
-    header("Location: sign-in"); 
-    exit;
-} else {
-    $_SESSION['timestamp'] = time(); 
-    header("Location: sign-in");
-}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
