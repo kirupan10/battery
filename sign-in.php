@@ -1,9 +1,10 @@
 <?php
 $_SESSION['last_activity'] = time();
+require_once 'assets/firebase/init.php'; // Initialize Firebase
 include_once('assets/inactive.php');
-include_once('assets/config.php');
+
+
 function test_input($data) {
-     
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -12,11 +13,10 @@ function test_input($data) {
   
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      
-    $username = test_input($_POST["username"]);
-    $password = test_input($_POST["password"]);
-    $stmt = $conn->prepare("SELECT * FROM users");
-    $stmt->execute();
-    $users = $stmt->fetchAll();
+  $username = test_input($_POST["username"]);
+  $password = test_input($_POST["password"]);
+  
+  $users = $database->getReference('users')->getValue();
      
     foreach($users as $user) {
          
@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,7 +1,8 @@
 <?php
-session_start();
+include_once('assets/configsys.php');
 $_SESSION['last_activity'] = time();
 include_once('assets/inactive.php');
+
 if ($_SESSION["sign_in"] != true) {
   header("Location: sign-in.php");
 }
@@ -140,9 +141,11 @@ if ($_SESSION["sign_in"] != true) {
                     <div class="numbers">
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
-                      <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h ?>&&p= <?php echo $battery_p ?>">Battery 03</a></p>
-                      <h5 class="font-weight-bolder">
-                        <?php echo $battery_p . "%" ?>
+                      <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                        <a href="billing.php?bn=2">Battery 02</a>
+                      </p>
+                      <h5 class="font-weight-bolder" id="battery2p">
+                        Loading...
                       </h5>
                       <p class="mb-0">
                         since yesterday
@@ -169,9 +172,11 @@ if ($_SESSION["sign_in"] != true) {
                     <div class="numbers">
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
-                      <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h ?>&&p= <?php echo $battery_p ?>">Battery 04</a></p>
-                      <h5 class="font-weight-bolder">
-                        <?php echo $battery_p . "%" ?>
+                      <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                        <a href="billing.php?bn=2">Battery 02</a>
+                      </p>
+                      <h5 class="font-weight-bolder" id="battery2p">
+                        Loading...
                       </h5>
                       <p class="mb-0">
                         since yesterday
@@ -193,7 +198,7 @@ if ($_SESSION["sign_in"] != true) {
         </div>
         <br>
         <div class="row">
-          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
               <div class="card-body p-3">
                 <div class="row">
@@ -201,9 +206,11 @@ if ($_SESSION["sign_in"] != true) {
                     <div class="numbers">
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
-                      <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h ?>&&p= <?php echo $battery_p ?>">Battery 05</a></p>
-                      <h5 class="font-weight-bolder">
-                        <?php echo $battery_p . "%" ?>
+                      <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                        <a href="billing.php?bn=2">Battery 02</a>
+                      </p>
+                      <h5 class="font-weight-bolder" id="battery2p">
+                        Loading...
                       </h5>
                       <p class="mb-0">
                         since yesterday
@@ -230,9 +237,11 @@ if ($_SESSION["sign_in"] != true) {
                     <div class="numbers">
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
-                      <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h ?>&&p= <?php echo $battery_p ?>">Battery 06</a></p>
-                      <h5 class="font-weight-bolder">
-                        <?php echo $battery_p . "%" ?>
+                      <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                        <a href="billing.php?bn=2">Battery 02</a>
+                      </p>
+                      <h5 class="font-weight-bolder" id="battery2p">
+                        Loading...
                       </h5>
                       <p class="mb-0">
                         since yesterday
@@ -259,9 +268,11 @@ if ($_SESSION["sign_in"] != true) {
                     <div class="numbers">
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
-                      <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h ?>&&p= <?php echo $battery_p ?>">Battery 07</a></p>
-                      <h5 class="font-weight-bolder">
-                        <?php echo $battery_p . "%" ?>
+                      <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                        <a href="billing.php?bn=2">Battery 02</a>
+                      </p>
+                      <h5 class="font-weight-bolder" id="battery2p">
+                        Loading...
                       </h5>
                       <p class="mb-0">
                         since yesterday
@@ -288,9 +299,11 @@ if ($_SESSION["sign_in"] != true) {
                     <div class="numbers">
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
-                      <p class="text-sm mb-0 text-uppercase font-weight-bold"><a href="billing.php?h=<?php echo $battery_h ?>&&p= <?php echo $battery_p ?>">Battery 08</a></p>
-                      <h5 class="font-weight-bolder">
-                        <?php echo $battery_p . "%" ?>
+                      <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                        <a href="billing.php?bn=2">Battery 02</a>
+                      </p>
+                      <h5 class="font-weight-bolder" id="battery2p">
+                        Loading...
                       </h5>
                       <p class="mb-0">
                         since yesterday

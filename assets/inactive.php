@@ -2,7 +2,7 @@
 session_start();
 
 function checkSessionTimeout() {
-    $inactiveTimeout = 60; // 60 seconds of inactivity
+    $inactiveTimeout = 3000; // 60 seconds of inactivity
 
     if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $inactiveTimeout) {
         // Session has expired, destroy it
@@ -11,7 +11,7 @@ function checkSessionTimeout() {
         session_start(); // Optional: start a new session
 
         // Redirect to slider.php
-        header('Location: slider.php');
+        header('Location: index.php');
         exit();
     }
 
