@@ -80,7 +80,7 @@ $batteryno = $_GET['bn'];
                     <h5 class="text-white mt-4 mb-5 pb-2">4562&nbsp;&nbsp;&nbsp;1122&nbsp;&nbsp;&nbsp;4594&nbsp;&nbsp;&nbsp;7852</h5>
                     <div class="d-flex">
                       <div class="d-flex">
-                        <div class="me-4">
+                        <div class="me-4" required>
                           <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
                           <h6 class="text-white mb-0">Jack Peterson</h6>
                         </div>
@@ -132,6 +132,7 @@ $batteryno = $_GET['bn'];
                 </div>
               </div>
             </div>
+            <form>
             <div class="col-md-12 mb-lg-0 mb-4">
               <div class="card mt-4">
                 <div class="card-header pb-0 p-3">
@@ -145,13 +146,13 @@ $batteryno = $_GET['bn'];
                   <div class="row">
                     <div class="col-md-6 mb-md-0 mb-4">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="Kirupan Inpathas"></h6>
+                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="Jack Peterson" required></h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852"></h6>
+                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852" required></h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
                     </div>
@@ -160,13 +161,13 @@ $batteryno = $_GET['bn'];
                   <div class="row">
                     <div class="col-md-6 mb-md-0 mb-4">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="CIV &nbsp; 7852"></h6>
+                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="CIV &nbsp; 7*52" required></h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="Month/Year &nbsp;&nbsp;&nbsp;07/27"></h6>
+                        <h6 class="mb-0"><input type="text" class="mb-0" placeholder="Month/Year &nbsp;&nbsp;&nbsp;07/27" required></h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
                     </div>
@@ -178,12 +179,14 @@ $batteryno = $_GET['bn'];
                       <h6 class="mb-0">Process to continue</h6>
                     </div>
                     <div class="col-6 text-end">
-                      <a class="btn bg-gradient-dark mb-0" href="receipt.php?bn=<?php echo $batteryno ?>">&nbsp;&nbsp;Continue <i class="fas fa-arrow-right"></i></a>
+                     
+                      <a class="btn bg-gradient-dark mb-0" href="receipt.php?bn=<?php echo $batteryno ?>">&nbsp;&nbsp; <input type = "submit" value = "Continue"  style="color: white;"> <i class="fas fa-arrow-right"></i></a>
                     </div>
                   </div>
                 </div>
                 <br>
               </div>
+  </form>
 
             </div>
           </div>

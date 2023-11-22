@@ -84,7 +84,8 @@ if ($_SESSION["sign_in"] != true) {
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Card Holder's Name</label>
-                    <input class="form-control" type="text" value="Kirupan Inpathas">
+                    <input class="form-control" type="text" value="Jack Peterson
+">
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -112,7 +113,7 @@ if ($_SESSION["sign_in"] != true) {
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Name</label>
-                    <input class="form-control" type="text" value="Chris P. Bacon.">
+                    <input class="form-control" type="text" value="Jack Peterson">
                   </div>
                 </div>
                 <div class="col-md-12">
@@ -179,6 +180,8 @@ if ($_SESSION["sign_in"] != true) {
               <div>
                 <i class="ni education_hat mr-2"></i>Collect your battery and close the Tray
               </div>
+              
+              <button onclick="redirectToAnotherPage()">Click me to redirect</button>
             </div>
           </div>
           <div class="d-lg-flex justify-content-lg-center" id="loading_img">
@@ -245,6 +248,13 @@ if ($_SESSION["sign_in"] != true) {
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/dashboard.min.js?v=2.0.4"></script>
   <script type="module" src="js/batterytray.js"></script>
+
+  <script>
+    function redirectToAnotherPage() {
+        // Change the URL to the desired destination
+        window.location.href = 'backend.php'; // Replace with your desired URL
+    }
+</script>
 
 </body>
 
