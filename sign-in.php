@@ -1,4 +1,5 @@
 <?php
+include_once('assets/configsys.php');
 $_SESSION['last_activity'] = time();
 require_once 'assets/firebase/init.php'; // Initialize Firebase
 require_once ('assets/inactive.php');

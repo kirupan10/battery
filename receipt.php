@@ -1,12 +1,24 @@
 <?php
-session_start();
-$_SESSION['last_activity'] = time();
 include_once('assets/inactive.php');
+$_SESSION['last_activity'] = time();
+
 if ($_SESSION["sign_in"] != true) {
   header("Location: sign-in.php");
   exit;
 }
 ?>
+
+<?php
+$batteryno = $_GET['bn'];
+
+if($_GET['bn'] !=true){
+  header("Location: dashboard.php");
+}
+?>
+<script>
+  var batteryno = <?php echo $batteryno ?>;
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -169,7 +181,7 @@ if ($_SESSION["sign_in"] != true) {
           <div class="card-body pt-0">
             <div class="text-center mt-4">
               <h5>
-                Battery 06<span class="font-weight-light">, Tray 06</span>
+                Battery <?php echo $batteryno ?><span class="font-weight-light">, Tray <?php echo $batteryno ?></span>
               </h5>
               <div class="h6 font-weight-300">
                 <i class="ni location_pin mr-2"></i>Health %, Percentage %
@@ -189,7 +201,7 @@ if ($_SESSION["sign_in"] != true) {
           <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
             <div class="d-flex justify-content-between justify-content-xl-center">
               <a class="btn btn-dark btn-sm d-none d-lg-block float-center mb-0" role="button" id="btnopenclose">Loaidng..</a>
-              <a class="btn btn-dark btn-sm d-block d-lg-none float-center mb-0" role="button" href="led.php"><i class="ni ni-email-83"></i></a>
+              <a class="btn btn-dark btn-sm d-block d-lg-none float-center mb-0" role="button" href="Thankyou.php"><i class="ni ni-email-83"></i></a>
             </div>
           </div>
         </div>
@@ -252,7 +264,7 @@ if ($_SESSION["sign_in"] != true) {
   <script>
     function redirectToAnotherPage() {
         // Change the URL to the desired destination
-        window.location.href = 'backend.php'; // Replace with your desired URL
+        window.location.href = 'Thankyou.php?bn=<?php echo $batteryno; ?>'; // Replace with your desired URL
     }
 </script>
 

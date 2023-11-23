@@ -29,7 +29,6 @@ include_once('assets/inactive.php');
 <body>
 
 <div class="slider-container">
-    <div class="slide"><img src="assets/img/slider/image1.jpg" alt="Slide 1"></div>
     <div class="slide"><img src="assets/img/slider/image2.jpg" alt="Slide 2"></div>
     <div class="slide"><img src="assets/img/slider/image3.jpg" alt="Slide 3"></div>
     <!-- Add more slides as needed -->

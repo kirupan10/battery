@@ -1,5 +1,6 @@
 <?php
 $_SESSION['last_activity'] = time();
+
 include_once('assets/inactive.php');
 if ($_SESSION["sign_in"] != true) {
   header("Location: sign-in.php");
@@ -180,7 +181,7 @@ $batteryno = $_GET['bn'];
                     </div>
                     <div class="col-6 text-end">
                      
-                      <a class="btn bg-gradient-dark mb-0" href="receipt.php?bn=<?php echo $batteryno ?>">&nbsp;&nbsp; <input type = "submit" value = "Continue"  style="color: white;"> <i class="fas fa-arrow-right"></i></a>
+                      <a class="btn bg-gradient-dark mb-0" href="receipt.php?bn=<?php echo $batteryno; ?>">&nbsp;&nbsp; <button class="btn bg-gradient-dark mb-0" onclick="redirectToAnotherPage()">Continue</button> <i class="fas fa-arrow-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -476,6 +477,12 @@ $batteryno = $_GET['bn'];
 
 
   <script type="module" src="js/readdata.js"></script>
+  <script>
+    function redirectToAnotherPage() {
+        // Change the URL to the desired destination
+        window.location.href = 'receipt.php?bn=<?php echo $batteryno; ?>'; // Replace with your desired URL
+    }
+</script>
 
 </body>
 

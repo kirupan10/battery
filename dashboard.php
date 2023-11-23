@@ -142,7 +142,7 @@ if ($_SESSION["sign_in"] != true) {
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
                       <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                        <a href="billing.php?bn=2">Battery 02</a>
+                        <a href="billing.php?bn=3">Battery 03</a>
                       </p>
                       <h5 class="font-weight-bolder" id="battery2p">
                         Loading...
@@ -173,7 +173,7 @@ if ($_SESSION["sign_in"] != true) {
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
                       <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                        <a href="billing.php?bn=2">Battery 02</a>
+                        <a href="billing.php?bn=4">Battery 04</a>
                       </p>
                       <h5 class="font-weight-bolder" id="battery2p">
                         Loading...
@@ -207,7 +207,7 @@ if ($_SESSION["sign_in"] != true) {
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
                       <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                        <a href="billing.php?bn=2">Battery 02</a>
+                        <a href="billing.php?bn=5">Battery 05</a>
                       </p>
                       <h5 class="font-weight-bolder" id="battery2p">
                         Loading...
@@ -238,7 +238,7 @@ if ($_SESSION["sign_in"] != true) {
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
                       <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                        <a href="billing.php?bn=2">Battery 02</a>
+                        <a href="billing.php?bn=6">Battery 06</a>
                       </p>
                       <h5 class="font-weight-bolder" id="battery2p">
                         Loading...
@@ -269,7 +269,7 @@ if ($_SESSION["sign_in"] != true) {
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
                       <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                        <a href="billing.php?bn=2">Battery 02</a>
+                        <a href="billing.php?bn=7">Battery 07</a>
                       </p>
                       <h5 class="font-weight-bolder" id="battery2p">
                         Loading...
@@ -300,7 +300,7 @@ if ($_SESSION["sign_in"] != true) {
                       <?php $battery_h = rand(70, 100);
                       $battery_p = rand(20, 100); ?>
                       <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                        <a href="billing.php?bn=2">Battery 02</a>
+                        <a href="billing.php?bn=8">Battery 08</a>
                       </p>
                       <h5 class="font-weight-bolder" id="battery2p">
                         Loading...
