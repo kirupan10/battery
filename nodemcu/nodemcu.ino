@@ -13,8 +13,8 @@
 #include "addons/RTDBHelper.h"
 
 // Insert your network credentials
-#define WIFI_SSID "Redmi8"
-#define WIFI_PASSWORD "12341234"
+#define WIFI_SSID "Dialog4GFF5"
+#define WIFI_PASSWORD "Yenu@1234"
 
 // Insert Firebase project API Key
 #define API_KEY "AIzaSyDIohXgNNi7bUVynBkuv1yhd05Iwx6OXTE"
@@ -40,11 +40,12 @@ int nodeno = 1;
 
 int sw = 14;        // door sensor //D5
 int IR = 12;        //slot ir  //D6
-int Gate = 5;       // ind led //D1
+int Gate = 5;       // ind led //D1   //0 = Open
 int alert_led = 4;  //D2
 
 int gt = 0;
 int irs = 0;
+  String nodePath = "fromnode/node3/";
 
 void setup() {
 
@@ -54,6 +55,9 @@ void setup() {
   pinMode(alert_led, OUTPUT);
   pinMode(Gate, OUTPUT);
 
+  digitalWrite(Gate, 1);  // pre define to close
+
+
   Serial.begin(115200);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("Connecting to Wi-Fi");
@@ -61,10 +65,10 @@ void setup() {
     Serial.print(".");
     delay(300);
   }
-  Serial.println();
+  // Serial.println();
   Serial.print("Connected with IP: ");
-  Serial.println(WiFi.localIP());
-  Serial.println();
+  // Serial.println(WiFi.localIP());
+  // Serial.println();
 
   /* Assign the api key (required) */
   config.api_key = API_KEY;
@@ -74,7 +78,7 @@ void setup() {
 
   /* Sign up */
   if (Firebase.signUp(&config, &auth, "", "")) {
-    Serial.println("ok");
+    // Serial.println("ok");
     signupOK = true;
   } else {
     Serial.printf("%s\n", config.signer.signupError.message.c_str());
@@ -85,70 +89,79 @@ void setup() {
 
   Firebase.begin(&config, &auth);
   Firebase.reconnectWiFi(true);
+
 }
 
 void loop() {
   if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 5000 || sendDataPrevMillis == 0)) {
     sendDataPrevMillis = millis();
     // Write an Int number on the database path test/int
-    Firebase.RTDB.setInt(&fbdo, "fromnode/node1/soc", random(0, 50));
-    Firebase.RTDB.setInt(&fbdo, "fromnode/node1/soh", random(80, 100));
-    Firebase.RTDB.setInt(&fbdo, "fromnode/node1/temp", random(27, 34));
-    Firebase.RTDB.setInt(&fbdo, "fromnode/node1/charge", random(0, 100));
+    Firebase.RTDB.setInt(&fbdo, nodePath + "soc", random(0, 50));
+    Firebase.RTDB.setInt(&fbdo, nodePath + "soh", random(80, 100));
+    Firebase.RTDB.setInt(&fbdo, nodePath + "temp", random(27, 34));
+    Firebase.RTDB.setInt(&fbdo, nodePath + "charge", random(20, 100));
+
+
 
     if (digitalRead(IR) && irs == 0) {
-      Serial.println("IR_detect");
+      // Serial.println("IR_detect");
       irs = 1;
     } else if (!digitalRead(IR) && irs == 1) {
-      Serial.println("IR_detect_not");
+      // Serial.println("IR_detect_not");
       irs = 0;
     }
-    Firebase.RTDB.setInt(&fbdo, "fromnode/node1/status", irs);
+    Firebase.RTDB.setInt(&fbdo, nodePath + "status", irs);
 
     if (digitalRead(sw) && gt == 0) {
-      Serial.println("Door open");
+      // Serial.println("Door open");
       gt = 1;
     } else if (!digitalRead(sw) && gt == 1) {
-      Serial.println("Door Close");
+      // Serial.println("Door Close");
       gt = 0;
     }
-    Firebase.RTDB.setInt(&fbdo, "fromnode/node1/isgate", gt);
+    Firebase.RTDB.setInt(&fbdo, nodePath + "isgate", gt);
 
-    if (Firebase.RTDB.getInt(&fbdo, "fromnode/node1/gate")) {
+    if (Firebase.RTDB.getInt(&fbdo, nodePath + "gate")) {
       if (fbdo.dataType() == "int") {
         intValue = fbdo.intData();
-        if (intValue == 1) {
-          digitalWrite(Gate, 1);
-          Serial.println("Gate Open");
-        } else {
+        // Serial.println("Gate stts from Firebase" + intValue);
+        // 0 = Open
+        // 1 = Close
+        if (intValue == 0) {
           digitalWrite(Gate, 0);
-          Serial.println("Gate Close");
-        }
+          // Serial.println("Gate Open");
+          delay(1000);
+          digitalWrite(Gate, 1);
+          Firebase.RTDB.setInt(&fbdo, nodePath + "gate", 1);
+
+          // Serial.println("Gate Closed");
+
+        } 
       }
     }
   } else {
-    Serial.println(fbdo.errorReason());
+    // Serial.println(fbdo.errorReason());
   }
 
   // if (Firebase.RTDB.setInt(&fbdo, "fromnode/int", count)){
-  //   Serial.println("PASSED");
-  //   Serial.println("PATH: " + fbdo.dataPath());
-  //   Serial.println("TYPE: " + fbdo.dataType());
+  //   // Serial.println("PASSED");
+  //   // Serial.println("PATH: " + fbdo.dataPath());
+  //   // Serial.println("TYPE: " + fbdo.dataType());
   // }
   // else {
-  //   Serial.println("FAILED");
-  //   Serial.println("REASON: " + fbdo.errorReason());
+  //   // Serial.println("FAILED");
+  //   // Serial.println("REASON: " + fbdo.errorReason());
   // }
   // count++;
 
   // // Write an Float number on the database path test/float
   // if (Firebase.RTDB.setFloat(&fbdo, "test/float", 0.01 + random(0,100))){
-  //   Serial.println("PASSED");
-  //   Serial.println("PATH: " + fbdo.dataPath());
-  //   Serial.println("TYPE: " + fbdo.dataType());
+  //   // Serial.println("PASSED");
+  //   // Serial.println("PATH: " + fbdo.dataPath());
+  //   // Serial.println("TYPE: " + fbdo.dataType());
   // }
   // else {
-  //   Serial.println("FAILED");
-  //   Serial.println("REASON: " + fbdo.errorReason());
+  //   // Serial.println("FAILED");
+  //   // Serial.println("REASON: " + fbdo.errorReason());
   // }
 }
