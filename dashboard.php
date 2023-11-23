@@ -144,7 +144,7 @@ if ($_SESSION["sign_in"] != true) {
                       <p class="text-sm mb-0 text-uppercase font-weight-bold">
                         <a href="billing.php?bn=3">Battery 03</a>
                       </p>
-                      <h5 class="font-weight-bolder" id="battery2p">
+                      <h5 class="font-weight-bolder" id="battery3p">
                         Loading...
                       </h5>
                       <p class="mb-0">
@@ -164,6 +164,7 @@ if ($_SESSION["sign_in"] != true) {
               </div>
             </div>
           </div>
+
           <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
               <div class="card-body p-3">
@@ -198,7 +199,7 @@ if ($_SESSION["sign_in"] != true) {
         </div>
         <br>
         <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
               <div class="card-body p-3">
                 <div class="row">

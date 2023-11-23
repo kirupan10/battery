@@ -12,6 +12,7 @@ const db = getDatabase(app);
 
 var batteryopenclose = true;
 document.getElementById("btnopenclose").addEventListener("click", openclose);
+document.getElementById("btnopenclose").innerHTML = "Open Battry Tray";
 
 // $("#btnopenclose").on("click", function () {
 //   // Get the number from the URL using the URLSearchParams API
@@ -29,24 +30,19 @@ function openclose() {
   // Make an AJAX request
   $.ajax({
     type: "GET",
-    url: "/led.php",
+    url: "./led.php",
     data: { number: numberToPass }, // Pass the number as a parameter
     success: function (response) {
       // Handle the success response here
       console.log(response);
 
-      update(ref(db, "fromnode/" + "node1"), {
-        gate: batteryopenclose ? 0 : 1, // Replace 2 with the new value you want to set for "gate"
+      update(ref(db, "fromnode/" + "node" + numberToPass), {
+        gate: 0, // Replace 2 with the new value you want to set for "gate"
       })
         .then(() => {
           console.log("Update successful.");
-          if (batteryopenclose) {
-            document.getElementById("btnopenclose").innerHTML =
-              "Open Battry Tray";
-          } else {
-            document.getElementById("btnopenclose").innerHTML =
-              "Close Battry Tray";
-          }
+          document.getElementById("btnopenclose").innerHTML =
+            "Opened Battry Tray";
         })
         .catch((error) => {
           console.log("Update failed: " + error.message);
@@ -63,20 +59,3 @@ function openclose() {
     },
   });
 }
-
-const getTrayData = ref(db, "fromnode/node1");
-
-get(getTrayData)
-  .then((snapshot) => {
-    const data = snapshot.val();
-    if (data["gate"] == 0) {
-      document.getElementById("btnopenclose").innerHTML = "Open Battry Tray";
-      batteryopenclose = !batteryopenclose;
-    } else {
-      document.getElementById("btnopenclose").innerHTML = "Close Battry Tray";
-      batteryopenclose = !batteryopenclose;
-    }
-  })
-  .catch((error) => {
-    console.error("Error reading data:", error);
-  });

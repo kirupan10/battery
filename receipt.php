@@ -11,7 +11,7 @@ if ($_SESSION["sign_in"] != true) {
 <?php
 $batteryno = $_GET['bn'];
 
-if($_GET['bn'] !=true){
+if ($_GET['bn'] != true) {
   header("Location: dashboard.php");
 }
 ?>
@@ -96,8 +96,7 @@ if($_GET['bn'] !=true){
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Card Holder's Name</label>
-                    <input class="form-control" type="text" value="Jack Peterson
-">
+                    <input class="form-control" type="text" value="Jack Peterson">
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -183,8 +182,9 @@ if($_GET['bn'] !=true){
               <h5>
                 Battery <?php echo $batteryno ?><span class="font-weight-light">, Tray <?php echo $batteryno ?></span>
               </h5>
-              <div class="h6 font-weight-300">
-                <i class="ni location_pin mr-2"></i>Health %, Percentage %
+              <div class="h6 font-weight-300" id="alldata">
+                <i class="ni location_pin mr-2"></i>
+                Loading....
               </div>
               <div class="h6 mt-4">
                 <i class="ni business_briefcase-24 mr-2"></i>Payment has been successfully completed.
@@ -192,8 +192,8 @@ if($_GET['bn'] !=true){
               <div>
                 <i class="ni education_hat mr-2"></i>Collect your battery and close the Tray
               </div>
-              
-              <button onclick="redirectToAnotherPage()">Click me to redirect</button>
+
+
             </div>
           </div>
           <div class="d-lg-flex justify-content-lg-center" id="loading_img">
@@ -201,7 +201,7 @@ if($_GET['bn'] !=true){
           <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
             <div class="d-flex justify-content-between justify-content-xl-center">
               <a class="btn btn-dark btn-sm d-none d-lg-block float-center mb-0" role="button" id="btnopenclose">Loaidng..</a>
-              <a class="btn btn-dark btn-sm d-block d-lg-none float-center mb-0" role="button" href="Thankyou.php"><i class="ni ni-email-83"></i></a>
+              <a class="btn btn-dark btn-sm d-block d-lg-none float-center mb-0" role="button" id="btnopenclose"><i class=" ni ni-email-83"></i></a>
             </div>
           </div>
         </div>
@@ -259,14 +259,17 @@ if($_GET['bn'] !=true){
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/dashboard.min.js?v=2.0.4"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   <script type="module" src="js/batterytray.js"></script>
+  <script type="module" src="js/readdata_opengate.js"></script>
 
   <script>
     function redirectToAnotherPage() {
-        // Change the URL to the desired destination
-        window.location.href = 'Thankyou.php?bn=<?php echo $batteryno; ?>'; // Replace with your desired URL
+      // Change the URL to the desired destination
+      window.location.href = 'Thankyou.php?bn=<?php echo $batteryno; ?>'; // Replace with your desired URL
     }
-</script>
+  </script>
 
 </body>
 

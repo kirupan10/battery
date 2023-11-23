@@ -25,3 +25,11 @@ onValue(node2, (snapshot) => {
   // change data of id = battery1p to data
   document.getElementById("battery2p").innerHTML = data["charge"] + "%";
 });
+const node3 = ref(db, "fromnode/node3");
+onValue(node3, (snapshot) => {
+  const data = snapshot.val();
+  // updateStarCount(postElement, data);
+  console.log(data["charge"]);
+  // change data of id = battery1p to data
+  document.getElementById("battery3p").innerHTML = data["charge"] + "%";
+});
