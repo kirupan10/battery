@@ -11,6 +11,10 @@ if ($_SESSION["sign_in"] != true) {
 <html lang="en">
 <?php
 $batteryno = $_GET['bn'];
+
+if ($_GET['bn'] != true) {
+  header("Location: dashboard.php");
+}
 ?>
 <script>
   var batteryno = <?php echo $batteryno ?>;
@@ -200,7 +204,8 @@ $batteryno = $_GET['bn'];
                 <h6 class="mb-0">Battery Management System (BMS)</h6>
               </div>
               <div class="col-6 text-end">
-                <button class="btn btn-outline-primary btn-sm mb-0">View All</button>
+                <b>Battery Tray <?php echo $_GET['bn'];?>   </b>
+               
               </div>
             </div>
           </div>

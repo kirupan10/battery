@@ -200,8 +200,8 @@ if ($_GET['bn'] != true) {
           </div>
           <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
             <div class="d-flex justify-content-between justify-content-xl-center">
-              <a class="btn btn-dark btn-sm d-none d-lg-block float-center mb-0" role="button" id="btnopenclose">Loaidng..</a>
-              <a class="btn btn-dark btn-sm d-block d-lg-none float-center mb-0" role="button" id="btnopenclose"><i class=" ni ni-email-83"></i></a>
+              <a class="btn btn-dark btn-sm d-none d-lg-block float-center mb-0" role="button" id="btnopenclose" >Loaidng..</a>
+              <a class="btn btn-dark btn-sm d-block d-lg-none float-center mb-0" role="button" id="btnopenclose" onclick="redirectToAnotherPage()"><i class=" ni ni-email-83"></i></a>
             </div>
           </div>
         </div>

@@ -43,6 +43,10 @@ function openclose() {
           console.log("Update successful.");
           document.getElementById("btnopenclose").innerHTML =
             "Opened Battry Tray";
+
+            // Redirect to Thankyou.php with the bn parameter
+      window.location.href = "Thankyou.php?bn=" + numberToPass;
+            
         })
         .catch((error) => {
           console.log("Update failed: " + error.message);
@@ -58,4 +62,6 @@ function openclose() {
       console.error(error);
     },
   });
+
+  
 }

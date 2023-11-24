@@ -1,39 +1,20 @@
-<script>
-
-    // Initialize Firebase
-var firebaseConfig = {
-    apiKey: "AIzaSyDIohXgNNi7bUVynBkuv1yhd05Iwx6OXTE",
-  authDomain: "battery-serving-station.firebaseapp.com",
-  databaseURL: "https://battery-serving-station-default-rtdb.firebaseio.com",
-  projectId: "battery-serving-station",
-  storageBucket: "battery-serving-station.appspot.com",
-  messagingSenderId: "1081020094421",
-  appId: "1:1081020094421:web:92075e641dbb8800d64f5c"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-// Assuming 'https://battery-serving-station-default-rtdb.firebaseio.com/' is your Realtime Database URL
-var database = firebase.database();
-var ref = database.ref('https://battery-serving-station-default-rtdb.firebaseio.com/fromnode'); // Replace 'your_collection' with your actual collection name
-
-// Assuming 'isgate' is the field you want to check and '1' is the value you are looking for
-ref.orderByChild('isgate').equalTo('1').once('value')
-    .then(function(snapshot) {
-        if (snapshot.exists()) {
-            // Records with the specified condition exist
-            snapshot.forEach(function(childSnapshot) {
-                console.log("Key: " + childSnapshot.key, childSnapshot.val());
-            });
-        } else {
-            // No records matching the condition found
-            console.log("No records found with the specified condition");
+<?php
+require_once 'assets/firebase/init.php'; // Initialize Firebase
+$users = $database->getReference('fromnode')->getValue();
+if ($users) {
+    foreach ($users as $id => $user) {
+        //echo "<li>{$user['isgate']}</li>";
+        if ($user['isgate'] != 1 ){
+            
+                header("location: sysclose.php");
+        
+            
+        }else{
+          header("location: ./");
         }
-    })
-    .catch(function(error) {
-        console.error("Error getting data: ", error);
-    });
-</script>
+    }
+}
+?>
 
 
 <!DOCTYPE html>

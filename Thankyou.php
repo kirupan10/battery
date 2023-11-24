@@ -4,6 +4,12 @@ $batteryno = $_GET['bn'];
 if($_GET['bn'] !=true){
   header("Location: dashboard.php");
 }
+
+
+include_once('assets/inactive.php');
+$_SESSION['last_activity'] = time();
+session_destroy();
+
 ?>
 <script>
   var batteryno = <?php echo $batteryno ?>;
